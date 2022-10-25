@@ -1,0 +1,24 @@
+{
+  "name": "estudando-typescript",
+  "version": "1.0.0",
+  "description": "Atividades das aulas de TypeScript da Alpha EdTech.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "start": "npx tsc & node ./build",
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janascher/typescript.git"
+  },
+  "author": "Janaína Scher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janascher/typescript/issues"
+  },
+  "homepage": "https://github.com/janascher/typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
