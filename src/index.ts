@@ -1,11 +1,49 @@
 class Validator {
-    data: string | number | boolean | undefined | null;
+    data: string | number | boolean | undefined | null
 
-    constructor(data: string | number | boolean | undefined | null) {
-        this.data = data;
+    constructor(data: any) {
+        this.data = data
     }
 }
 
-let object = new Validator('Janaína');
+class StringValidator extends Validator {
+    constructor(data: any) {
+        if (typeof data === 'string') {
+            console.log('É string')
+            super(data)
+        } else {
+            throw new Error('O tipo está errado')
+        }
+    }
+}
 
-console.log(object.data);
+class NumberValidator extends Validator {
+    constructor(data: any) {
+        if (typeof data === 'number') {
+            console.log('É number')
+            super(data)
+        } else {
+            throw new Error('O tipo está errado')
+        }
+    }
+}
+
+class BooleanValidator extends Validator {
+    constructor(data: any) {
+        if (typeof data === 'boolean') {
+            console.log('É boolean')
+            super(data)
+        } else {
+            throw new Error('O tipo está errado')
+        }
+    }
+}
+
+const object1 = new StringValidator('Hello')
+console.log(`${object1.data}`)
+
+const object2 = new NumberValidator(1)
+console.log(`${object2.data}`)
+
+const object3 = new BooleanValidator(true)
+console.log(`${object3.data}`)
