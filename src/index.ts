@@ -1,18 +1,18 @@
 class Validator {
-    data: string | number | boolean | undefined | null
+    data: string | number | boolean | undefined | null;
 
     constructor(data: any) {
-        this.data = data
+        this.data = data;
     }
 }
 
 class StringValidator extends Validator {
     constructor(data: any) {
         if (typeof data === 'string') {
-            console.log('É string')
-            super(data)
+            console.log('É string');
+            super(data);
         } else {
-            throw new Error('O tipo está errado')
+            throw new Error('O tipo está errado');
         }
     }
 }
@@ -20,10 +20,10 @@ class StringValidator extends Validator {
 class NumberValidator extends Validator {
     constructor(data: any) {
         if (typeof data === 'number') {
-            console.log('É number')
-            super(data)
+            console.log('É number');
+            super(data);
         } else {
-            throw new Error('O tipo está errado')
+            throw new Error('O tipo está errado');
         }
     }
 }
@@ -31,19 +31,19 @@ class NumberValidator extends Validator {
 class BooleanValidator extends Validator {
     constructor(data: any) {
         if (typeof data === 'boolean') {
-            console.log('É boolean')
-            super(data)
+            console.log('É boolean');
+            super(data);
         } else {
-            throw new Error('O tipo está errado')
+            throw new Error('O tipo está errado');
         }
     }
 }
 
-const object1 = new StringValidator('Hello')
-console.log(`${object1.data}`)
+const object1 = new StringValidator('Hello');
+console.log(`${object1.data}`);
 
-const object2 = new NumberValidator(1)
-console.log(`${object2.data}`)
+const object2 = new NumberValidator(1);
+console.log(`${object2.data}`);
 
-const object3 = new BooleanValidator(true)
-console.log(`${object3.data}`)
+const object3 = new BooleanValidator(true);
+console.log(`${object3.data}`);
