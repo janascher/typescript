@@ -7,7 +7,7 @@ class Validator {
 class StringValidator extends Validator {
     constructor(data) {
         if (typeof data === 'string') {
-            console.log('É string');
+            console.log(`${data} é string.`);
             super(data);
         }
         else {
@@ -18,7 +18,7 @@ class StringValidator extends Validator {
 class NumberValidator extends Validator {
     constructor(data) {
         if (typeof data === 'number') {
-            console.log('É number');
+            console.log(`${data} é number`);
             super(data);
         }
         else {
@@ -29,7 +29,7 @@ class NumberValidator extends Validator {
 class BooleanValidator extends Validator {
     constructor(data) {
         if (typeof data === 'boolean') {
-            console.log('É boolean');
+            console.log(`${data} é boolean`);
             super(data);
         }
         else {

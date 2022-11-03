@@ -1,13 +1,11 @@
+'use strict';
 class Validator {
-    data: string | number | boolean | undefined | null | void;
-
-    constructor(data: any) {
+    constructor(data) {
         this.data = data;
     }
 }
-
 class StringValidator extends Validator {
-    constructor(data: any) {
+    constructor(data) {
         if (typeof data === 'string') {
             console.log(`${data} é string.`);
             super(data);
@@ -16,9 +14,8 @@ class StringValidator extends Validator {
         }
     }
 }
-
 class NumberValidator extends Validator {
-    constructor(data: any) {
+    constructor(data) {
         if (typeof data === 'number') {
             console.log(`${data} é number`);
             super(data);
@@ -27,9 +24,8 @@ class NumberValidator extends Validator {
         }
     }
 }
-
 class BooleanValidator extends Validator {
-    constructor(data: any) {
+    constructor(data) {
         if (typeof data === 'boolean') {
             console.log(`${data} é boolean`);
             super(data);
@@ -38,18 +34,13 @@ class BooleanValidator extends Validator {
         }
     }
 }
-
 const object1 = new StringValidator('Hello');
 /* console.log(`${object1.data}`); */
-
 const object2 = new NumberValidator(1);
 /* console.log(`${object2.data}`); */
-
 const object3 = new BooleanValidator(true);
 /* console.log(`${object3.data}`); */
-
 class EmailInput extends HTMLElement {
-    emailInput: HTMLInputElement;
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: 'open' }); // Criado um shadow DOM
@@ -57,18 +48,15 @@ class EmailInput extends HTMLElement {
         this.emailInput.onchange = (e) => this.onChange(e);
         shadow.appendChild(this.emailInput);
     }
-
-    onChange(e: Event) {
+    onChange(e) {
         const object4 = new RegexValidator(this.emailInput.value);
         console.log(`O e-mail é: ${object4.data}`);
     }
 }
-
 class RegexValidator extends StringValidator {
-    constructor(data: any) {
+    constructor(data) {
         const regexp = /^(\w{1,}@\w{1,}\.(\w{3})(\.\w{2}){0,1})$/gim;
-        const result: boolean = regexp.test(data);
-
+        const result = regexp.test(data);
         if (result === true) {
             super(data);
             console.log(`O e-mail ${data} está correto.`);
@@ -77,5 +65,4 @@ class RegexValidator extends StringValidator {
         }
     }
 }
-
 customElements.define('email-input', EmailInput);
