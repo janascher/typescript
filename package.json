@@ -4,7 +4,7 @@
   "description": "Atividades das aulas de TypeScript da Alpha EdTech.",
   "main": "index.js",
   "scripts": {
-    "dev": "",
+    "dev": "npx tsc -watch",
     "start": "npx tsc & node ./build",
     "build": "npx tsc"
   },
