@@ -36,6 +36,17 @@ Usar o último projeto seguindo estes passos:
 5. Compile seu código Typescript para JavaScript;
 6. Crie um index.html que chame o EmailInput e o vincule ao seu index.html.
 
+### Aula 04
+#### Parte 1
+Usar o último projeto em Typescript seguindo estes passos:
+Os regex necessários serão:
+- email:`/^(\w{1,}@\w{1,}\.(\w{3})(\.\w{2}){0,1})$/gim`;
+- password: `/^\w{1,}$/gim`;
+- name: `/^([a-z]{1,})([ ]{1}[a-z]{1,}){0,}$/gim`.
+1. Modifique o RegexValidator para uma classe abstrata e adicione uma propriedade “get” com o nome “regex” que retorne um RegExp vazio: new RegExp(‘’);
+2. Crie um EmailValidator, PasswordValidator e NameValidator herdando de RegexValidator, estes devem sobrescrever a propriedade “regex” para retornar as respectivas expressões regulares;
+3. Compile seu código typescript para JS.
+
 ## 🔗 Referências básicas 
 
 - [TypeScript: JavaScript With Syntax For Types. (typescriptlang.org)](https://www.typescriptlang.org/)
