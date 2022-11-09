@@ -18,6 +18,7 @@ Criar um projeto em Typescript seguindo estes passos:
 2. Crie uma classe chamando-a de “Validator”;
 3. Crie um atributo dessa classe chamado de “data” que seja da união dos tipos nativos;
 4. Compile seu código para Javascript (build).
+---
 
 ### Aula 02
 Criar uma nova branch do último projeto seguindo estes passos:
@@ -26,6 +27,7 @@ Criar uma nova branch do último projeto seguindo estes passos:
 3. Crie 3 classes herdando de “Validator”, chamando-as de “StringValidator”, “NumberValidator” e “BooleanValidator”;
 4. Cada uma das classes deve implementar um `constructor` e chamar o `constructor` da classe `Validator`;
 5. Em cada um dos `constructors` deve ser checado se `data` é do tipo esperado e chamar o `constructor` superior, caso contrário deve executar: `throw new Error("O tipo está errado")`.
+---
 
 ### Aula 03
 Usar o último projeto seguindo estes passos:
@@ -35,9 +37,10 @@ Usar o último projeto seguindo estes passos:
 4. Adicione um evento “onchange” ao input dentro do Custom Element, instanciando o  regexValidator com o valor recebido pelo input;
 5. Compile seu código Typescript para JavaScript;
 6. Crie um index.html que chame o EmailInput e o vincule ao seu index.html.
+---
 
-### Aula 04
-#### Parte 1
+### Aula 04 - Parte 1
+
 Usar o último projeto em Typescript seguindo estes passos:
 Os regex necessários serão:
 - email:`/^(\w{1,}@\w{1,}\.(\w{3})(\.\w{2}){0,1})$/gim`;
@@ -46,6 +49,25 @@ Os regex necessários serão:
 1. Modifique o RegexValidator para uma classe abstrata e adicione uma propriedade “get” com o nome “regex” que retorne um RegExp vazio: new RegExp(‘’);
 2. Crie um EmailValidator, PasswordValidator e NameValidator herdando de RegexValidator, estes devem sobrescrever a propriedade “regex” para retornar as respectivas expressões regulares;
 3. Compile seu código typescript para JS.
+
+### Aula 04 - Parte 2
+Deve usar o projeto anterior seguindo estes passos:
+
+1. Crie as classes EmailInput, NameInput e PasswordInput herdando de HTMLElements;
+2. Valide as respostas no evento “onchange” de cada input e faça um try/catch e em caso de captura de erro limpe o input.value;
+3. Crie as seguintes Interfaces com os atributos especificados:
+    a. APIResponse<T>: data: T, errors: Array<strings>;
+    b. UserData: id, email e name;
+    c. LoginData: id
+4. Crie um botão que quando clicado chame a função que chama cada requisição (não execute a função caso algum dos inputs necessários esteja vazio): Cadastrar, Logar e Atualizar;
+5. Para cada botão faça uma função que execute as respectivas requisições para um servidor localhost:8000 com os seguintes dados:
+    a. POST “/accounts/” => body: email, name e password;
+        - response: Response<UserData>
+    b. POST “/accounts/login” => body: email e password;
+        - response: Response<LoginData>
+    c. PATCH “/accounts/” => body: email, name e password;
+        - response: Response<UserData>
+6. Compile seu código typescript para JS.
 
 ## 🔗 Referências básicas 
 
